@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  grid-template-columns: 200px 1fr;
+}
+
+.header {
+  grid-area: header;
+  background-color: orange;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: rgb(67, 67, 181);
+  color: white;
+  height: calc(100vh - 50px);
+}
+
+.main {
+  grid-area: main;
+  background: rgb(235, 218, 218);
+  height: calc(100vh - 50px);
+}
+
+.header .part1 {
+  
+}
