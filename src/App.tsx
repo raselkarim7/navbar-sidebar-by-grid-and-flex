@@ -10,21 +10,34 @@ function App() {
   const menuArray = Array(5).fill(0);
 
   return (
-    <div className="App">
+    <div className={sidebar ? "appSidebar" : "appNoSidebar"}>
       <div className="header">
         <div className="part1">
-          <div className="appTitle">NAGANO NABCO</div>
-          <div className="menuOpenIconContainer">
+          {sidebar ? <div className="appTitle">NAGANO NABCO</div> : ""}
+          <div
+            className="menuOpenIconContainer"
+            onClick={() => {
+              setSidebar((prev) => !prev);
+            }}
+          >
             <MenuOpenIcon />
           </div>
         </div>
         <div></div>
       </div>
-      <div className="sidebar">
-        {menuArray.map((item, index) => (
-          <div className="menuItem" key={index}>Menu {index + 1} </div>
-        ))}
-      </div>
+
+      {sidebar ? (
+        <div className="sidebar">
+          {menuArray.map((item, index) => (
+            <div className="menuItem" key={index}>
+              Menu {index + 1}{" "}
+            </div>
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
+
       <div className="main">Main</div>
     </div>
   );
