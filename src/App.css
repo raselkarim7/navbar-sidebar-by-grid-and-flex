@@ -1,3 +1,11 @@
+:root {
+  /* --orange:  orange; */
+  --orange: rgb(60, 60, 223);
+  --blue: rgb(96, 96, 233);
+  --light-blue: rgb(148, 148, 233);
+  --light-white: rgb(235, 218, 218);
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -12,27 +20,66 @@
 }
 
 .header {
+  background-color: var(--orange);
   grid-area: header;
-  background-color: orange;
   height: 50px;
   display: grid;
   grid-template-columns: 200px 1fr;
-  align-items: center;
 }
 
 .sidebar {
+  background: var(--blue);
   grid-area: sidebar;
-  background: rgb(67, 67, 181);
   color: white;
   height: calc(100vh - 50px);
 }
 
 .main {
+  background: var(--light-white);
   grid-area: main;
-  background: rgb(235, 218, 218);
   height: calc(100vh - 50px);
 }
 
 .header .part1 {
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--blue);
+  color: white;
+  /* border-right: 1px solid var(--light-white); */
+}
+
+.appTitle {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.menuOpenIconContainer {
+  cursor: pointer;
+  color: white;
+  margin-right: 5px;
+}
+
+.sidebar .menuItem {
+  height: 40px;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.sidebar .menuItem::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-color: white;
+}
+
+.sidebar .menuItem:hover {
+  background: var(--light-blue);
 }
