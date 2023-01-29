@@ -13,7 +13,7 @@ function App() {
     <div className={sidebar ? "appSidebar" : "appNoSidebar"}>
       <div className="header">
         <div className="part1">
-          {sidebar ? <div className="appTitle">NAGANO NABCO</div> : ""}
+          {sidebar ? <div className="appTitle">Pink Floyd - GRID</div> : ""}
           <div
             className={`menuOpenIconContainer ${sidebar ? '' : 'logoAnim'}`}
             onClick={() => {
