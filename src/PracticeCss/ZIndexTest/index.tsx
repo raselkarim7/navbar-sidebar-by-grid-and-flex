@@ -1,6 +1,7 @@
 import React from "react";
+import './ZIndexTest.css'
 
-const PracticeCSS = () => {
+const ZIndexTest = () => {
   const [open, setOpen] = React.useState(true);
   return (
     <>
@@ -32,4 +33,4 @@ const PracticeCSS = () => {
   );
 };
 
-export default PracticeCSS;
+export default ZIndexTest;
