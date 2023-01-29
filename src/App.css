@@ -71,6 +71,12 @@
   cursor: pointer;
   color: var(--white);
   margin: 0px 5px;
+
+}
+
+.logoAnim {
+  transition: transform 0.5s;
+  transform: rotate(180deg);
 }
 
 .sidebar .menuItem {

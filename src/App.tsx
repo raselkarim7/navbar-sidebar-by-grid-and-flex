@@ -15,7 +15,7 @@ function App() {
         <div className="part1">
           {sidebar ? <div className="appTitle">NAGANO NABCO</div> : ""}
           <div
-            className="menuOpenIconContainer"
+            className={`menuOpenIconContainer ${sidebar ? '' : 'logoAnim'}`}
             onClick={() => {
               setSidebar((prev) => !prev);
             }}
