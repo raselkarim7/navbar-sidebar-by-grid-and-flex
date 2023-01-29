@@ -30,7 +30,7 @@ function App() {
         <div className="sidebar">
           {menuArray.map((item, index) => (
             <div className="menuItem" key={index}>
-              Menu {index + 1}{" "}
+              Album {index + 1}{" "}
             </div>
           ))}
         </div>
