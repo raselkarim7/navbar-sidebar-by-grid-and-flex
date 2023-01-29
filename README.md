@@ -2,6 +2,7 @@
 ### Implemented navbar sidebar by Grid and Flex both.
 
 - Switch between 'flex-layout' and 'grid-layout' branch to see the code. 
+- 'flex-layout' branch has sidebar transition, but the grid-layout branch has not.
 
 
 
