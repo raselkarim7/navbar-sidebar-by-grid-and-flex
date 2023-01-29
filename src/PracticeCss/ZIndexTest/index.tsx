@@ -2,7 +2,7 @@ import React from "react";
 import './ZIndexTest.css'
 
 const ZIndexTest = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   return (
     <>
       <h2>Modal Example</h2>
