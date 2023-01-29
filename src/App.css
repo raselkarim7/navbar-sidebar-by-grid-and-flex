@@ -70,7 +70,7 @@
 .menuOpenIconContainer {
   cursor: pointer;
   color: var(--white);
-  margin-right: 5px;
+  margin: 0px 5px;
 }
 
 .sidebar .menuItem {
