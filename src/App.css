@@ -2,11 +2,12 @@
   /* --orange:  orange; */
   --orange: rgb(60, 60, 223);
   --blue: rgb(96, 96, 233);
-    --light-blue: rgb(148, 148, 233);
-
+  --light-blue: rgb(148, 148, 233);
   --white: white;
-
   --light-white: rgb(235, 218, 218);
+
+  --header-height: 50px;
+  --menuItem-height: 40px;
 }
 
 * {
@@ -14,50 +15,43 @@
   box-sizing: border-box;
 }
 
-.appSidebar {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "sidebar main";
-  grid-template-columns: 200px 1fr;
-}
-
-.appNoSidebar {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "main main";
-  grid-template-columns: 1fr 1fr;
-}
-
 .header {
   background-color: var(--orange);
-  grid-area: header;
-  height: 50px;
-  display: grid;
-  grid-template-columns: 200px 1fr;
+  height: var(--header-height);
+}
+
+.siderbar-menuItem-container {
+  display: flex;
 }
 
 .sidebar {
   background: var(--blue);
-  grid-area: sidebar;
   color: var(--white);
-  height: calc(100vh - 50px);
+  width: 200px;
+  height: calc(100vh - var(--header-height));
+  transition:  0.5s;
+}
+
+.nosidebar {
+  width: 0px;
+  background: var(--blue);
+  transition:  0.5s;
 }
 
 .main {
   background: var(--light-white);
-  grid-area: main;
-  height: calc(100vh - 50px);
+  flex-grow: 1;
+  height: calc(100vh - var(--header-height));
 }
 
 .header .part1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 200px;
+  height: var(--header-height);
   background: var(--orange);
   color: var(--white);
-  /* border-right: 1px solid var(--light-white); */
 }
 
 .appTitle {
@@ -71,7 +65,6 @@
   cursor: pointer;
   color: var(--white);
   margin: 0px 5px;
-
 }
 
 .logoAnim {
@@ -80,7 +73,7 @@
 }
 
 .sidebar .menuItem {
-  height: 40px;
+  height: var(--menuItem-height);
   padding: 5px;
   cursor: pointer;
   display: flex;

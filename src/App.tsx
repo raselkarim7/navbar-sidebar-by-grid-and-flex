@@ -10,12 +10,12 @@ function App() {
   const menuArray = Array(5).fill(0);
 
   return (
-    <div className={sidebar ? "appSidebar" : "appNoSidebar"}>
+    <div>
       <div className="header">
         <div className="part1">
           {sidebar ? <div className="appTitle">NAGANO NABCO</div> : ""}
           <div
-            className={`menuOpenIconContainer ${sidebar ? '' : 'logoAnim'}`}
+            className={`menuOpenIconContainer ${sidebar ? "" : "logoAnim"}`}
             onClick={() => {
               setSidebar((prev) => !prev);
             }}
@@ -26,19 +26,18 @@ function App() {
         <div></div>
       </div>
 
-      {sidebar ? (
-        <div className="sidebar">
-          {menuArray.map((item, index) => (
-            <div className="menuItem" key={index}>
-              Menu {index + 1}{" "}
-            </div>
-          ))}
+      <div className="siderbar-menuItem-container">
+        <div className={sidebar ? "sidebar" : "nosidebar"}>
+          {sidebar
+            ? menuArray.map((item, index) => (
+                <div className="menuItem" key={index}>
+                  Menu {index + 1}{" "}
+                </div>
+              ))
+            : ""}
         </div>
-      ) : (
-        ""
-      )}
-
-      <div className="main">Main</div>
+        <div className="main">Main</div>
+      </div>
     </div>
   );
 }
