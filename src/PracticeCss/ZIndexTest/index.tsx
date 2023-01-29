@@ -25,8 +25,8 @@ const ZIndexTest = () => {
             &times;
           </span>
           <p>Some text in the Modal..</p>
-          <div className="square inside1 "></div>
-          <div className="square inside2 "></div>
+          <div className="square inside1"></div>
+          <div className="square inside2"></div>
         </div>
       </div>
     </>
