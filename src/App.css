@@ -57,7 +57,6 @@
   align-items: center;
   background: var(--orange);
   color: var(--white);
-  /* border-right: 1px solid var(--light-white); */
 }
 
 .appTitle {
