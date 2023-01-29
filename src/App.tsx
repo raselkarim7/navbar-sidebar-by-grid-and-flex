@@ -13,7 +13,7 @@ function App() {
     <div>
       <div className="header">
         <div className="part1">
-          {sidebar ? <div className="appTitle">NAGANO NABCO</div> : ""}
+          {sidebar ? <div className="appTitle">PINK FLOYD</div> : ""}
           <div
             className={`menuOpenIconContainer ${sidebar ? "" : "logoAnim"}`}
             onClick={() => {
@@ -31,12 +31,17 @@ function App() {
           {sidebar
             ? menuArray.map((item, index) => (
                 <div className="menuItem" key={index}>
-                  Menu {index + 1}{" "}
+                  Album {index + 1}{" "}
                 </div>
               ))
             : ""}
         </div>
-        <div className="main">Main</div>
+        <div className="main">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. A magnam non
+          tenetur recusandae, neque tempore minima odio aliquid voluptates
+          doloribus maxime culpa ad, praesentium repudiandae mollitia ab
+          reprehenderit, iusto veritatis.:{" "}
+        </div>
       </div>
     </div>
   );
