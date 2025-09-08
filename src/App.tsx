@@ -3,17 +3,20 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 
+const LoremText = () => <p style={{margin: '10px 0px', padding: '10px'}}>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur quis voluptatem cumque repellat enim, neque, quibusdam libero itaque obcaecati debitis voluptate, dolorum accusantium laboriosam voluptatum voluptas rem ab vero minus beatae non voluptatibus distinctio sit ullam. Rerum eius perspiciatis magni architecto? Culpa fugiat dolorem ab distinctio odit iste temporibus possimus?
+</p>
+
 function App() {
   const [sidebar, setSidebar] = useState(true);
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   const menuArray = Array(5).fill(0);
 
   return (
     <div>
-      <div className="header">
+      <div className={`header ${sidebar ? "withSidebar" : "fullWidth"}`}>
         <div className="part1">
-          {sidebar ? <div className="appTitle">Pink Floyd - FLEX</div> : ""}
           <div
             className={`menuOpenIconContainer ${sidebar ? "" : "logoAnim"}`}
             onClick={() => {
@@ -23,24 +26,50 @@ function App() {
             <MenuOpenIcon />
           </div>
         </div>
-        <div></div>
+        <div>Profile Logo</div>
       </div>
 
       <div className="siderbar-menuItem-container">
         <div className={sidebar ? "sidebar" : "nosidebar"}>
           {sidebar
             ? menuArray.map((item, index) => (
-                <div className="menuItem" key={index}>
-                  Album {index + 1}{" "}
-                </div>
-              ))
+              <div className="menuItem" key={index}>
+                Album {index + 1}{" "}
+              </div>
+            ))
             : ""}
         </div>
-        <div className="main">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. A magnam non
-          tenetur recusandae, neque tempore minima odio aliquid voluptates
-          doloribus maxime culpa ad, praesentium repudiandae mollitia ab
-          reprehenderit, iusto veritatis.:{" "}
+        <div className={`main ${sidebar ? "withSidebar" : "fullWidth"}`}>
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
         </div>
       </div>
     </div>
