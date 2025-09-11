@@ -8,7 +8,7 @@
 
   --header-height: 50px;
   --sidebar-menuItem-height: 50px;
-  --sidebar-width: 200px
+  --sidebar-width: 200px;
 }
 
 * {
@@ -16,42 +16,11 @@
   box-sizing: border-box;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  background-color: var(--orange);
-  height: var(--header-height);
-  transition: left 0.5s ease, width 0.5s ease;
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* when sidebar is visible */
-.header.withSidebar {
-  /* margin-left: var(--sidebar-width); 👈 pushes main away from sidebar */
-  left:  var(--sidebar-width);
-  width: calc(100% - var(--sidebar-width));
-}
-
-/* when sidebar is hidden */
-.header.fullWidth {
-  /* margin-left: 0; */
-  left: 0;
-  width: 100%;
-  
-}
-
-.siderbar-menuItem-container {
-  display: flex;
-}
-
 .sidebar {
-  position:fixed;
+  position: fixed;
   left: 0;
-  /* bottom: 0; */
-  
+  transition: 0.5s;
+
   background: var(--blue);
   color: var(--white);
   width: 200px;
@@ -59,41 +28,48 @@
   flex-grow: 0;
   flex-shrink: 0;
   height: 100vh;
-  /* height: calc(100vh - var(--header-height)); */
-  transition:  0.5s;
 }
 
 .nosidebar {
   width: 0px;
   background: var(--blue);
-  transition:  0.5s;
+  transition: 0.5s;
 }
 
+/* This is header & main wrapper */
+.hm-wrapper {
+  position: fixed;
+  top: 0;
+  transition: left 0.5s ease, width 0.5s ease;
+}
 
+.hm-wrapper.withSidebar {
+  left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+}
+
+.hm-wrapper.fullWidth {
+  left: 0;
+  width: 100%;
+}
+
+.header {
+  background-color: var(--orange);
+  height: var(--header-height);
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .main {
   background: var(--light-white);
   height: calc(100vh - var(--header-height));
   overflow-y: scroll;
   overflow-x: hidden;
-    width: 100%;
-
-  transition: margin-left 0.5s ease, width 0.5s ease;
-  margin-top: var(--header-height);
+  width: 100%;
   padding: 16px;
-
-}
-
-/* when sidebar is visible */
-.main.withSidebar {
-  margin-left: 200px; /* 👈 pushes main away from sidebar */
-  /* width: calc(100% - var(--sidebar-white)); */
-}
-
-/* when sidebar is hidden */
-.main.fullWidth {
-  margin-left: 0;
-
 }
 
 .header .part1 {
@@ -101,8 +77,6 @@
   align-items: center;
   height: 100%;
 }
-
-
 
 .menuOpenIconContainer {
   cursor: pointer;
