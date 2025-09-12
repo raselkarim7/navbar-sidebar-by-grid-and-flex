@@ -8,7 +8,8 @@
 
   --header-height: 50px;
   --sidebar-menuItem-height: 50px;
-  --sidebar-width: 200px;
+  --sidebar-width: 240px;
+  --sidebar-min-width: 68px;
 }
 
 * {
@@ -25,11 +26,11 @@
   color: var(--white);
   height: 100vh;
 }
-.sidebar.visible {
-  width: 200px;
+.sidebar.base {
+  width: var(--sidebar-width);
 }
-.sidebar.invisible {
-  width: 0px;
+.sidebar.min {
+  width: var(--sidebar-min-width);
 }
 
 /* This is header & main wrapper */
@@ -45,14 +46,13 @@
 }
 
 .hm-wrapper.fullWidth {
-  left: 0;
-  width: 100%;
+  left: var(--sidebar-min-width);
+  width: calc(100% - var(--sidebar-min-width));
 }
 
 .header {
   background-color: var(--orange);
   height: var(--header-height);
-
 
   display: flex;
   justify-content: space-between;

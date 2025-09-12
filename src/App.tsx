@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <div className={`sidebar ${sidebar ? "visible" : "invisible" }`}>
+      <div className={`sidebar ${sidebar ? "base" : "min" }`}>
         {sidebar
           ? menuArray.map((item, index) => (
               <div className="menuItem" key={index}>
