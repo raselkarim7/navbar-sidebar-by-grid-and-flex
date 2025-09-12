@@ -19,21 +19,17 @@
 .sidebar {
   position: fixed;
   left: 0;
-  transition: 0.5s;
+  transition: width 0.5s ease;
 
   background: var(--blue);
   color: var(--white);
-  width: 200px;
-  flex-basis: 200px;
-  flex-grow: 0;
-  flex-shrink: 0;
   height: 100vh;
 }
-
-.nosidebar {
+.sidebar.visible {
+  width: 200px;
+}
+.sidebar.invisible {
   width: 0px;
-  background: var(--blue);
-  transition: 0.5s;
 }
 
 /* This is header & main wrapper */
