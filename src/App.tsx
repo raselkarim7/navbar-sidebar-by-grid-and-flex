@@ -3,6 +3,17 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 
+const LoremText = () => (
+  <p style={{ margin: "10px 0px", padding: "10px" }}>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur quis
+    voluptatem cumque repellat enim, neque, quibusdam libero itaque obcaecati
+    debitis voluptate, dolorum accusantium laboriosam voluptatum voluptas rem ab
+    vero minus beatae non voluptatibus distinctio sit ullam. Rerum eius
+    perspiciatis magni architecto? Culpa fugiat dolorem ab distinctio odit iste
+    temporibus possimus?
+  </p>
+);
+
 function App() {
   const [sidebar, setSidebar] = useState(true);
 
@@ -11,36 +22,62 @@ function App() {
 
   return (
     <div>
-      <div className="header">
-        <div className="part1">
-          {sidebar ? <div className="appTitle">Pink Floyd - FLEX</div> : ""}
-          <div
-            className={`menuOpenIconContainer ${sidebar ? "" : "logoAnim"}`}
-            onClick={() => {
-              setSidebar((prev) => !prev);
-            }}
-          >
-            <MenuOpenIcon />
-          </div>
-        </div>
-        <div></div>
+      <div className={`sidebar ${sidebar ? "base" : "min" }`}>
+        {sidebar
+          ? menuArray.map((item, index) => (
+              <div className="menuItem" key={index}>
+                Album {index + 1}{" "}
+              </div>
+            ))
+          : ""}
       </div>
 
-      <div className="siderbar-menuItem-container">
-        <div className={sidebar ? "sidebar" : "nosidebar"}>
-          {sidebar
-            ? menuArray.map((item, index) => (
-                <div className="menuItem" key={index}>
-                  Album {index + 1}{" "}
-                </div>
-              ))
-            : ""}
+      <div className={`hm-wrapper ${sidebar ? "withSidebar" : "fullWidth"}`}>
+        <div className={`header`}>
+          <div className="part1">
+            <div
+              className={`menuOpenIconContainer ${sidebar ? "" : "logoAnim"}`}
+              onClick={() => {
+                setSidebar((prev) => !prev);
+              }}
+            >
+              <MenuOpenIcon />
+            </div>
+          </div>
+          <div>Profile Logo</div>
         </div>
-        <div className="main">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. A magnam non
-          tenetur recusandae, neque tempore minima odio aliquid voluptates
-          doloribus maxime culpa ad, praesentium repudiandae mollitia ab
-          reprehenderit, iusto veritatis.:{" "}
+
+        <div className={`main`}>
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
+          <LoremText />
         </div>
       </div>
     </div>
